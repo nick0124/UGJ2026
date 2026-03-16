@@ -29,6 +29,8 @@ public class Equalizer : MonoBehaviour
     
     [Header("Целевой объект")]
     [SerializeField] private GameObject targetObject; // Объект с методом OnBeatDetected
+    [SerializeField] private string functionName; // Название метода для вызова на целевом объекте
+
     
     private float[] spectrumData;
     private float lastTriggerTime = 0f;
@@ -73,8 +75,8 @@ public class Equalizer : MonoBehaviour
             lastTriggerTime = Time.time;
             
             // Вызываем метод на целевом объекте
-            if (targetObject != null)
-                targetObject.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
+            if (targetObject != null && !string.IsNullOrEmpty(functionName))
+                targetObject.SendMessage(functionName, SendMessageOptions.DontRequireReceiver);
         }
     }
 
