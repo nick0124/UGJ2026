@@ -13,7 +13,7 @@ public class GameView : MonoBehaviour
     public void CreateAllTurretCards(int turretID, GameManager manager)
     {
         TurretCard card = Instantiate(_turretCardPrefab, _allCardsContainer, false);
-        card.Initialized(manager.SpawnTurret, turretID);
+        card.Initialized(manager.SelectedTurret, turretID);
 
         card.UnhideCard();
         _turretCardObject.Add(turretID, card);

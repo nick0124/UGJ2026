@@ -347,9 +347,9 @@ GameObject:
   - component: {fileID: 283648579}
   - component: {fileID: 283648578}
   - component: {fileID: 283648577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: SpawnArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,7 +708,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dd86148f2ff7a47a094496b2c963df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  _maxTowerInPlace: 6
+  _spawnTurretMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _maxTowerInPlace: 2
   _turretPrefab:
   - {fileID: 6012471872215770965, guid: 2b84e25e73cf11844a37618ef87dd27d, type: 3}
   - {fileID: -8989055160568962399, guid: 7283fbdc772c83342a9fcfe08050aada, type: 3}
@@ -767,6 +770,7 @@ GameObject:
   - component: {fileID: 698952065}
   - component: {fileID: 698952064}
   - component: {fileID: 698952063}
+  - component: {fileID: 698952067}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -858,6 +862,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &698952067
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698952062}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &850428861
 GameObject:
   m_ObjectHideFlags: 0
