@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 184562063}
   serializedVersion: 2
   m_LocalRotation: {x: -0.49999925, y: -0.5000008, z: 0.49999925, w: 0.5000008}
-  m_LocalPosition: {x: -0, y: 0, z: 17}
+  m_LocalPosition: {x: -0, y: 0, z: 17.51}
   m_LocalScale: {x: 16.818, y: 16.818, z: 16.817997}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -419,7 +419,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 328674581}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 497625047}
+        m_TargetAssemblyTypeName: LoadSceneBtn, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SampleScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &328674581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +470,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328674578}
   m_CullTransparentMesh: 1
+--- !u!1 &497625046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 497625049}
+  - component: {fileID: 497625048}
+  - component: {fileID: 497625047}
+  - component: {fileID: 497625050}
+  m_Layer: 0
+  m_Name: Scripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &497625047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497625046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6c23579c714264ea0d8a6c131705ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadSceneBtn
+--- !u!114 &497625048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497625046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a0283566e224f40a61521ef25e923a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExitButton
+--- !u!4 &497625049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497625046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1079.0137, y: -0, z: -167.13907}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &497625050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497625046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff4b424decb64b42bed443d2b21f443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeSetting
+  volumeSlider: {fileID: 1295191902}
 --- !u!1 &508635617
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +567,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508635617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.34}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -492,7 +575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.65}
+  m_AnchoredPosition: {x: -0, y: -1.65}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &508635619
@@ -667,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.011764706}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1245,7 +1328,7 @@ GameObject:
   - component: {fileID: 1249518063}
   - component: {fileID: 1249518062}
   m_Layer: 5
-  m_Name: VolumeName (1)
+  m_Name: GameName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1401,7 +1484,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 497625050}
+        m_TargetAssemblyTypeName: VolumeSetting, Assembly-CSharp
+        m_MethodName: SetMasterVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1341473146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1728,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1421919566}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 497625048}
+        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1421919566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2055,8 +2162,8 @@ GameObject:
   - component: {fileID: 6173019854958182283}
   - component: {fileID: 9042620598514419393}
   - component: {fileID: 5501267510264472149}
-  - component: {fileID: 9042620598514419395}
   - component: {fileID: 9042620598514419394}
+  - component: {fileID: 9042620598514419395}
   m_Layer: 0
   m_Name: Speakers
   m_TagString: Untagged
@@ -2149,7 +2256,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e9d68bfa4cdc96944b417bb88931683a, type: 3}
+  m_Resource: {fileID: 8300000, guid: fcba773ea073d254999039eb041598ee, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2244,26 +2351,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3106594944432286896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43836495dd238b24cbb6e74d230234ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Equalizer
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
   audioSource: {fileID: 9042620598514419394}
-  spectrumSize: 256
+  sampleSize: 1024
   fftWindow: 4
-  threshold: 0.01
-  frequencyRange: 0.5
-  cooldownTime: 0.2
-  useFrequencyRange: 1
-  lowFrequency: 0.7
-  highFrequency: 1
-  objectToScale: {fileID: 6173019854958182283}
-  scaleMultiplier: 10
-  smoothSpeed: 20
-  minScale: 0.9
-  maxScale: 1.1
-  enableLogging: 1
-  targetObject: {fileID: 0}
-  functionName: 
+  objectToScale: {fileID: 0}
+  minScale: {x: 1, y: 1, z: 1}
+  maxScale: {x: 3, y: 3, z: 3}
+  bassMultiplier: 1
+  midMultiplier: 1
+  trebleMultiplier: 1
+  smoothTime: 0.1
+  mode: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2273,3 +2374,4 @@ SceneRoots:
   - {fileID: 6173019854958182283}
   - {fileID: 1521646278}
   - {fileID: 1712577931}
+  - {fileID: 497625049}
