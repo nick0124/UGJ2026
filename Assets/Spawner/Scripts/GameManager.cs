@@ -92,9 +92,9 @@ public class GameManager : MonoBehaviour
 
     private void CreateStartTurret()
     {
-        int randomIndex = UnityEngine.Random.Range(0, _turretPrefab.Count);
+        //int randomIndex = UnityEngine.Random.Range(0, _turretPrefab.Count);
 
-        SpawnTurret(_turretPrefab[randomIndex].ID, Vector3.zero);
+        SpawnTurret(_turretPrefab[0].ID, Vector3.zero);
     }
 
     private void InitializedAllTurretCard()
