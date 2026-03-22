@@ -23,7 +23,7 @@ public class Shooting : MonoBehaviour
         // Проверяем, прошло ли достаточно времени
         if (timer >= fireInterval)
         {
-            //Shoot();
+            Shoot();
             timer = 0f; // Сбрасываем таймер
         }
     }

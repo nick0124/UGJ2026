@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Main Options")]
     [SerializeField] private LayerMask _spawnTurretMask;
-    [SerializeField] private int _maxTowerInPlace;
+    [SerializeField] private int _maxTurretInPlace;
 
     [Header("Tower Options")]
     [SerializeField] private List<Turret> _turretPrefab;
@@ -25,10 +25,11 @@ public class GameManager : MonoBehaviour
     private Spawner _spawner;
     private PlayerAction _playerAction;
 
-    public Action<int, GameManager> onSpawnTurret;
-    public Action<int, GameManager> onCreateAllTurretCard;
+    public Action<Turret, GameManager> onSpawnTurret;
+    public Action<Turret, GameManager> onCreateAllTurretCard;
     public Action<int> onDestroyTurret;
-
+    public Action<int> onSelectTurret;
+    public Action<int, int> onChangeTurret;
 
     private void Start()
     {
@@ -45,10 +46,12 @@ public class GameManager : MonoBehaviour
 
     public void SelectedTurret(int turretID)
     {
-        if(_selectedTurretID == turretID)
+        onSelectTurret?.Invoke(turretID);
+
+        if (_selectedTurretID == turretID)
         {
             _isSelectTurret = false;
-            _selectedTurretID = int.MaxValue;
+            _selectedTurretID = int.MaxValue;         
             return;
         }
 
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         Turret selectedTurret = _turretPrefab.Find(t => t.ID == turretID);
 
-        if (_maxTowerInPlace < _currentTurretInScene + 1) return;
+        if (_maxTurretInPlace < _currentTurretInScene + 1) return;
         if (_spawnedTurret.ContainsKey(turretID) == true) return;
 
         Turret spawnTurret = _spawner.CreateObject<Turret>(selectedTurret, position);
@@ -68,7 +71,8 @@ public class GameManager : MonoBehaviour
         _spawnedTurret.Add(turretID, spawnTurret);
         _currentTurretInScene++;
 
-        onSpawnTurret?.Invoke(turretID, this);
+        onChangeTurret?.Invoke(_currentTurretInScene, _maxTurretInPlace);
+        onSpawnTurret?.Invoke(spawnTurret, this);
     }
 
     public void DeleteTurret(int turretID)
@@ -87,6 +91,7 @@ public class GameManager : MonoBehaviour
         _currentTurretInScene--;
         _spawnedTurret.Remove(turretID);
 
+        onChangeTurret?.Invoke(_currentTurretInScene, _maxTurretInPlace);
         onDestroyTurret?.Invoke(turretID);
     }
 
@@ -101,7 +106,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (var turret in _turretPrefab)
         {
-            onCreateAllTurretCard?.Invoke(turret.ID, this);
+            onCreateAllTurretCard?.Invoke(turret, this);
         }
     }
 

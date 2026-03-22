@@ -60,7 +60,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458411867059498862}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e69541c4ff439b445ac8f38cfec07eb1, type: 3}
   m_Name: 
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458411867059498862}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43836495dd238b24cbb6e74d230234ac, type: 3}
   m_Name: 
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a65574ead44d2b41a6b2f07aed32be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Turret
+  <Icon>k__BackingField: {fileID: 2800000, guid: f5ddba5b932618340bd40c84e7e0115a, type: 3}
   <ID>k__BackingField: 12
 --- !u!114 &-1912506121681845551
 MonoBehaviour:

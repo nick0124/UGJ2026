@@ -15,6 +15,8 @@ public class GameObserver : MonoBehaviour
         _manager.onCreateAllTurretCard += _view.CreateAllTurretCards;
         _manager.onSpawnTurret += _view.CreateSpawnedTurretCard;
         _manager.onDestroyTurret += _view.DestroyTurret;
+        _manager.onSelectTurret += _view.SelectedTurretCard;
+        _manager.onChangeTurret += _view.UpdateSpawnedTurretCount;
     }
 
     private void OnDisable()
@@ -22,5 +24,7 @@ public class GameObserver : MonoBehaviour
         _manager.onCreateAllTurretCard -= _view.CreateAllTurretCards;
         _manager.onSpawnTurret -= _view.CreateSpawnedTurretCard;
         _manager.onDestroyTurret -= _view.DestroyTurret;
+        _manager.onSelectTurret -= _view.SelectedTurretCard;
+        _manager.onChangeTurret -= _view.UpdateSpawnedTurretCount;
     }
 }
