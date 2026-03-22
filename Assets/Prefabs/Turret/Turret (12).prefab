@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5648574911852669612}
   - component: {fileID: 7182631394834401932}
   - component: {fileID: 1853357869395285688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8925781588955009682}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 6938846997539510943}
   - component: {fileID: 6929180510552304015}
   - component: {fileID: 8760929024785566472}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 6546719616556207611}
   - component: {fileID: 2105750262830489630}
   - component: {fileID: 2238464974980768708}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 2824751634669150276}
   - component: {fileID: 3891276955784374483}
   - component: {fileID: 8898328707837563771}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 40598098573709123}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SoundScale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,8 @@ GameObject:
   - component: {fileID: 749318802459603306}
   - component: {fileID: -3418265586553531868}
   - component: {fileID: -3137098979089366407}
-  m_Layer: 0
+  - component: {fileID: 5660023314215278029}
+  m_Layer: 7
   m_Name: Turret (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,6 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   <Icon>k__BackingField: {fileID: 2800000, guid: d04691045eb3b934da8b36d4e94ffce2, type: 3}
   <ID>k__BackingField: 13
+  _health: 100
 --- !u!114 &-3137098979089366407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,6 +552,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
   audioIndex: 12
+--- !u!65 &5660023314215278029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6909248453070534639}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8315063497047645696
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +584,7 @@ GameObject:
   - component: {fileID: 6595439083634408468}
   - component: {fileID: 6822410297806889039}
   - component: {fileID: 1043024437048290804}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

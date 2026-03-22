@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 5190961317330482886}
   - component: {fileID: -3061308374692224547}
   - component: {fileID: 272625413019335550}
-  m_Layer: 0
+  - component: {fileID: -402815511131302420}
+  m_Layer: 7
   m_Name: Turret (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   <Icon>k__BackingField: {fileID: 2800000, guid: 67a16bb61b9d6694b8e46a59bdbf6e0f, type: 3}
   <ID>k__BackingField: 7
+  _health: 100
 --- !u!114 &272625413019335550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +127,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
   audioIndex: 6
+--- !u!65 &-402815511131302420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620477347211466138}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1354902684483865829
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +159,7 @@ GameObject:
   - component: {fileID: 8128354214080207451}
   - component: {fileID: 8960392797581695948}
   - component: {fileID: 7942994792349249072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +249,7 @@ GameObject:
   - component: {fileID: 6552815211800943096}
   - component: {fileID: 6477162975691067298}
   - component: {fileID: 8538228029040955913}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463109969541765251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6994541523571419221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SoundScale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +402,7 @@ GameObject:
   - component: {fileID: 6823046332872638712}
   - component: {fileID: 8274866109197861729}
   - component: {fileID: 497621324985075665}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

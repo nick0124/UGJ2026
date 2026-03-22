@@ -1,22 +1,21 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageble
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float _health;
+
+    public void Die()
     {
-        
+        Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    
     public void TakeDamage(float damage)
     {
-        // Здесь можно добавить логику уменьшения здоровья врага и его уничтожения
         Debug.Log($"Enemy took {damage} damage!");
+
+        _health -= damage;
+
+        if (_health <= 0)
+            Die();
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1800654532328873353}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SoundScale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3829375080038595635}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 1159054357553738187}
   - component: {fileID: 5137406618841011456}
   - component: {fileID: 8658099630303923419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 6924960896860731937}
   - component: {fileID: 217358873071379096}
   - component: {fileID: 7035287237576686032}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 8591323451722417671}
   - component: {fileID: 8481871934853605907}
   - component: {fileID: 6398803186058837368}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,8 @@ GameObject:
   - component: {fileID: 4224192740017538110}
   - component: {fileID: -620299514532306061}
   - component: {fileID: 7387450172521864532}
-  m_Layer: 0
+  - component: {fileID: 5620169118586768175}
+  m_Layer: 7
   m_Name: Turret (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,6 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   <Icon>k__BackingField: {fileID: 2800000, guid: 75a8a7013efc7944c9d1fb1e5f0cf691, type: 3}
   <ID>k__BackingField: 8
+  _health: 100
 --- !u!114 &7387450172521864532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,3 +460,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
   audioIndex: 7
+--- !u!65 &5620169118586768175
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138044690945958563}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

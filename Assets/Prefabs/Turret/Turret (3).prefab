@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3324907767809271428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,8 @@ GameObject:
   - component: {fileID: 7935175554165602587}
   - component: {fileID: 7969641058001302093}
   - component: {fileID: 2918965924275455523}
-  m_Layer: 0
+  - component: {fileID: 6382962451235213277}
+  m_Layer: 7
   m_Name: Turret (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   <Icon>k__BackingField: {fileID: 2800000, guid: 617fdbb7ad1d8f04aba029b5eafdeec5, type: 3}
   <ID>k__BackingField: 4
+  _health: 100
 --- !u!114 &2918965924275455523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +157,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
   audioIndex: 3
+--- !u!65 &6382962451235213277
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3049583682792629644}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4210961178493638643
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +189,7 @@ GameObject:
   - component: {fileID: 5407315508430178590}
   - component: {fileID: 8939249642263176466}
   - component: {fileID: 7138349156298739257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +279,7 @@ GameObject:
   - component: {fileID: 4568298243799285505}
   - component: {fileID: 8992250649299640597}
   - component: {fileID: 282589856028412145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

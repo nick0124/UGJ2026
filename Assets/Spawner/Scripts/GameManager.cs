@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public Action<int> onSelectTurret;
     public Action<int, int> onChangeTurret;
 
-    private void Start()
+    private void Awake()
     {
         _spawner = new Spawner();
         

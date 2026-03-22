@@ -1,9 +1,13 @@
+using System;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     [Header("Настройки движения")]
     [SerializeField] private Transform target; // Цель, к которой нужно двигаться
+    [SerializeField] private float detectedRadius;
+    [SerializeField] private LayerMask turretMask;
     [SerializeField] private float moveSpeed = 5f; // Скорость движения
     [SerializeField] private float rotationSpeed = 360f; // Скорость поворота (градусов в секунду)
     [SerializeField] private float stoppingDistance = 0.5f; // Дистанция остановки
@@ -12,29 +16,33 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private bool moveOnStart = true; // Начать движение при старте
     [SerializeField] private bool rotateTowardsTarget = true; // Поворачиваться к цели
     [SerializeField] private bool smoothRotation = true; // Плавный поворот
-    
+
     private bool isMoving = false;
-    
+
+    public Action<IDamageble> onSetTarget;
+
     void Start()
     {
-        if (moveOnStart && target != null)
-        {
-            StartMoving();
-        }
+        SearchTarget();
     }
     
     void Update()
     {
-        if (!isMoving || target == null) return;
-        
-        // Двигаемся к цели
-        //MoveTowardsTarget();
-        
+        if (target == null)
+        {
+            SearchTarget();
+        }
+
+        if (!isMoving) return;
+
         // Поворачиваемся к цели (если нужно)
         if (rotateTowardsTarget)
         {
             RotateTowardsTarget();
         }
+
+        if (target != null)
+            MoveTowardsTarget();
     }
     
     public void MoveTowardsTarget()
@@ -63,7 +71,7 @@ public class EnemyMovement : MonoBehaviour
             OnTargetReached();
         }
     }
-    
+
     private void RotateTowardsTarget()
     {
         // Получаем направление к цели (игнорируем Y)
@@ -97,24 +105,36 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log($"Цель достигнута: {target.name}");
         isMoving = false;
     }
-    
-    // Публичные методы для управления
-    
-    public void SetTarget(Transform newTarget)
+        
+    public void SearchTarget()
     {
-        target = newTarget;
-    }
-    
-    public void StartMoving()
-    {
-        if (target != null)
+        Collider[] hits = Physics.OverlapSphere(transform.position, detectedRadius, turretMask);
+        float distance = float.MaxValue;
+        Transform target = null;
+
+        foreach (Collider hit in hits)
         {
-            isMoving = true;
+            if(distance > Vector3.Distance(transform.position, hit.transform.position))
+            {
+                distance = Vector3.Distance(transform.position, hit.transform.position);
+                target = hit.transform;
+            }
         }
-        else
+
+        if(target == null)
         {
-            Debug.LogWarning("Цель не назначена!");
+            Debug.Log("<color=red>Not found turret</color>");
+            isMoving = false;
+            return;
         }
+
+        this.target = target;
+        IDamageble triggerTarget = target.GetComponent<IDamageble>();
+
+        isMoving = true;
+
+        onSetTarget?.Invoke(triggerTarget);
+        Debug.Log($"Hit name <color=green>{target?.transform.name}</color>");
     }
     
     public void StopMoving()

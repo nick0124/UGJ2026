@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7070264201446625468}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3802553638794941626}
   - component: {fileID: 8683596568425550898}
   - component: {fileID: 6775648126914979692}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 8328529472281770323}
   - component: {fileID: 3621040628689244868}
   - component: {fileID: 1300569324306074779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,8 @@ GameObject:
   - component: {fileID: 1538266015540794089}
   - component: {fileID: -4664966106316975254}
   - component: {fileID: 6992422961881791097}
-  m_Layer: 0
+  - component: {fileID: -176765953685139554}
+  m_Layer: 7
   m_Name: Turret (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   <Icon>k__BackingField: {fileID: 2800000, guid: 84498b90864f51740800e99410cb6641, type: 3}
   <ID>k__BackingField: 6
+  _health: 100
 --- !u!114 &6992422961881791097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +338,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
   audioIndex: 5
+--- !u!65 &-176765953685139554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4169835229138331737}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7317814219386301957
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +370,7 @@ GameObject:
   - component: {fileID: 3977896374698588064}
   - component: {fileID: 6550612155954711762}
   - component: {fileID: 915863933094948708}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
