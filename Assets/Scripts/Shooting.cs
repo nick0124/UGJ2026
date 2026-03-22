@@ -7,12 +7,16 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;       // Точка выстрела
     public float bulletSpeed = 20f;   // Скорость пули
     public float fireInterval = 1f;    // Интервал между выстрелами (в секундах)
+
+    public LookAtEnemy lookAtEnemy;
     
     private float timer;
     
     void Start()
     {
         timer = 0f;
+
+        lookAtEnemy = GetComponent<LookAtEnemy>();
     }
     
     void Update()
@@ -30,7 +34,7 @@ public class Shooting : MonoBehaviour
     
     public void Shoot()
     {
-        if (bulletPrefab == null || firePoint == null) return;
+        if (bulletPrefab == null || firePoint == null || lookAtEnemy.nearestEnemy == null) return;
         
         // Создаем пулю
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);

@@ -1,26 +1,23 @@
-using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class Turret : MonoBehaviour, IDamageble
 {
-    [Header("Main Settings")]
     [field: SerializeField] public Texture Icon { get; private set; }
     [field: SerializeField] public int ID { get; private set; }
-
-    [Header("Character")]
-    [SerializeField] private float _health;
+    [field: SerializeField] public float Health { get; private set; }
 
     public void Die()
     {
-        Destroy(gameObject);
+        Debug.Log($"{gameObject.name} turret is destroyed.");
     }
 
     public void TakeDamage(float damage)
     {
-        _health -= damage;
+        Health -= damage;
 
-        if (_health < 0)
+        if (Health <= 0)
+        {
             Die();
+        };
     }
 }

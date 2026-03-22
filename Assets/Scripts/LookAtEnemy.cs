@@ -4,22 +4,97 @@ public class LookAtEnemy : MonoBehaviour
 {
     [Header("Настройки")]
     [SerializeField] private Transform target;
+
+    [Header("Настройки поиска")]
+    [SerializeField] private float searchRadius = 10f;
+    [SerializeField] private LayerMask enemyLayer; // Слой врагов
+    [SerializeField] private float searchInterval = 0.5f; // Интервал поиска (если не каждый кадр)
     
-    void Update()
+    public GameObject nearestEnemy;
+    private float distanceToNearestEnemy;
+    private float lastSearchTime;
+    
+    private void Start()
     {
-        if (target == null) return;
+        lastSearchTime = -searchInterval;
+        
+        FindNearestEnemyInRadius();
+    }
+    
+    private void Update()
+    {
+        if (Time.time - lastSearchTime >= searchInterval)
+        {
+            FindNearestEnemyInRadius();
+            lastSearchTime = Time.time;
+        }
+
+        if (nearestEnemy == null) return;
         
         InstantRotateY();
     }
     
+    
+    
+    public void FindNearestEnemyInRadius()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, searchRadius, enemyLayer);
+        
+        float closestDistance = Mathf.Infinity;
+        GameObject closestEnemy = null;
+        
+        foreach (Collider collider in hitColliders)
+        {
+            if (collider.gameObject == gameObject)
+                continue;
+            
+            float distanceToEnemy = Vector3.Distance(transform.position, collider.transform.position);
+            
+            if (distanceToEnemy < closestDistance)
+            {
+                closestDistance = distanceToEnemy;
+                closestEnemy = collider.gameObject;
+            }
+        }
+        
+        nearestEnemy = closestEnemy;
+        distanceToNearestEnemy = closestDistance;
+    }
+
     void InstantRotateY()
     {
-        Vector3 directionToTarget = target.position - transform.position;
+        Vector3 directionToTarget = nearestEnemy.transform.position - transform.position;
         directionToTarget.y = 0;
         
         if (directionToTarget != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(directionToTarget);
+        }
+    }
+    
+    public Vector3 GetDirectionToNearestEnemy()
+    {
+        if (nearestEnemy != null)
+        {
+            return (nearestEnemy.transform.position - transform.position).normalized;
+        }
+        return Vector3.zero;
+    }
+    
+    public bool IsEnemyInRange()
+    {
+        return nearestEnemy != null;
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, searchRadius);
+        
+        if (nearestEnemy != null && Application.isPlaying)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, nearestEnemy.transform.position);
         }
     }
 }

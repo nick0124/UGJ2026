@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            IDamageble enemy = collision.gameObject.GetComponent<IDamageble>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Enemy enemy = other.GetComponent<Enemy>();
+            IDamageble enemy = other.GetComponent<IDamageble>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);

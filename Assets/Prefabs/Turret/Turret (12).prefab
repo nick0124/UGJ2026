@@ -479,6 +479,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtEnemy
   target: {fileID: 0}
+  searchRadius: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  searchInterval: 0.5
 --- !u!114 &4071778554034516495
 MonoBehaviour:
   m_ObjectHideFlags: 0
