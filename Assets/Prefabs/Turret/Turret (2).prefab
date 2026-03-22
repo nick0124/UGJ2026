@@ -390,8 +390,9 @@ MonoBehaviour:
   searchRadius: 10
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   searchInterval: 0.5
+  nearestEnemy: {fileID: 0}
 --- !u!114 &3490874227435178016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +409,7 @@ MonoBehaviour:
   firePoint: {fileID: 603719361975523909}
   bulletSpeed: 20
   fireInterval: 1
+  lookAtEnemy: {fileID: 0}
 --- !u!114 &6195428647541774323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   <Icon>k__BackingField: {fileID: 2800000, guid: c8e225d4eff7e184cb5163f8fe406f2c, type: 3}
   <ID>k__BackingField: 3
-  _health: 100
+  <Health>k__BackingField: 100
 --- !u!114 &2299689720946981957
 MonoBehaviour:
   m_ObjectHideFlags: 0
