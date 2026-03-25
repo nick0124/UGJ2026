@@ -34,19 +34,32 @@ public class Shooting : MonoBehaviour
     
     public void Shoot()
     {
-        if (bulletPrefab == null || firePoint == null || lookAtEnemy.nearestEnemy == null) return;
-        
-        // Создаем пулю
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         
-        // Задаем скорость
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.linearVelocity = firePoint.forward * bulletSpeed;
         }
         
-        // Уничтожаем через 3 секунды
         Destroy(bullet, 3f);
     }
+
+/*
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 20f;
+
+    public void Shoot()
+    {
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = transform.forward * bulletSpeed;
+        }
+        
+        Destroy(bullet, 3f);
+    }
+    */
 }
