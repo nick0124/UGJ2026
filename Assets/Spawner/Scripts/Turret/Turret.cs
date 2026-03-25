@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Turret : MonoBehaviour, IDamageble
@@ -6,8 +7,11 @@ public class Turret : MonoBehaviour, IDamageble
     [field: SerializeField] public int ID { get; private set; }
     [field: SerializeField] public float Health { get; private set; }
 
+    public Action<int> onDie;
+
     public void Die()
     {
+        onDie?.Invoke(ID);
         Debug.Log($"{gameObject.name} turret is destroyed.");
     }
 

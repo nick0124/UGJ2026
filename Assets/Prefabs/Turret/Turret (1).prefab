@@ -165,7 +165,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6724813555123848119, guid: 4a9dbb12a6d883f4e9b8bf132e83d1a1, type: 3}
   firePoint: {fileID: 2373413163253539484}
   bulletSpeed: 20
-  fireInterval: 1
+  fireInterval: 10
   lookAtEnemy: {fileID: 0}
 --- !u!114 &4606812926208395357
 MonoBehaviour:

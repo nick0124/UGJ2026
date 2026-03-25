@@ -194,4 +194,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
   _damage: 10
-  _delay: 5
+  _delay: 1

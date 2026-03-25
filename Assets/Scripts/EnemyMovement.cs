@@ -2,7 +2,7 @@ using System;
 using UnityEditorInternal;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+  public class EnemyMovement : MonoBehaviour
 {
     [Header("Настройки движения")]
     [SerializeField] private Transform target; // Цель, к которой нужно двигаться

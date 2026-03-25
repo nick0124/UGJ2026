@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviour
         _spawnedTurret.Add(turretID, spawnTurret);
         _currentTurretInScene++;
 
+        spawnTurret.onDie += DeleteTurret;
+
         onChangeTurret?.Invoke(_currentTurretInScene, _maxTurretInPlace);
         onSpawnTurret?.Invoke(spawnTurret, this);
     }
