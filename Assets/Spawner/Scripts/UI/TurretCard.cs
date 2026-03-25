@@ -19,10 +19,10 @@ public class TurretCard : MonoBehaviour
         _background = GetComponent<Image>();
     }
 
-    public void Initialized(Action<int> function, Turret turret)
+    public void Initialized(Action<int, bool> function, Turret turret)
     {
         _icon.texture = turret.Icon;
-        _button.onClick.AddListener(() => function(turret.ID));
+        _button.onClick.AddListener(() => function(turret.ID, false));
     }
 
     public void HideCard()

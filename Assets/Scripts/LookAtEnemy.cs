@@ -3,6 +3,7 @@ using UnityEngine;
 public class LookAtEnemy : MonoBehaviour
 {
     [Header("Настройки")]
+    [SerializeField] private UnitType _targetTypeTrigger;
     [SerializeField] private Transform target;
 
     [Header("Настройки поиска")]
@@ -45,15 +46,20 @@ public class LookAtEnemy : MonoBehaviour
         
         foreach (Collider collider in hitColliders)
         {
-            if (collider.gameObject == gameObject)
-                continue;
-            
-            float distanceToEnemy = Vector3.Distance(transform.position, collider.transform.position);
-            
-            if (distanceToEnemy < closestDistance)
+            if (collider.TryGetComponent<Enemy>(out var enemy))
             {
-                closestDistance = distanceToEnemy;
-                closestEnemy = collider.gameObject;
+                if (enemy.Types.Contains(_targetTypeTrigger))
+                {
+                    Debug.Log($"<color=yellow>{enemy.name}</color>");
+
+                    float distanceToEnemy = Vector3.Distance(transform.position, collider.transform.position);
+
+                    if (distanceToEnemy < closestDistance)
+                    {
+                        closestDistance = distanceToEnemy;
+                        closestEnemy = collider.gameObject;
+                    }
+                }
             }
         }
         

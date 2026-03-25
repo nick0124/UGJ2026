@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e6056fbdd952c468d9befb3cae5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtEnemy
+  _targetTypeTrigger: 1
   target: {fileID: 0}
   searchRadius: 10
   enemyLayer:

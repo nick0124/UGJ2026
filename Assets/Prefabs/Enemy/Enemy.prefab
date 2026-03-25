@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _health: 50
+  <Types>k__BackingField: 01000000
 --- !u!114 &5309473428091841403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,4 +195,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
   _damage: 10
-  _delay: 1
+  _delay: 5

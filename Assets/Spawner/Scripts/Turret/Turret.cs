@@ -7,11 +7,11 @@ public class Turret : MonoBehaviour, IDamageble
     [field: SerializeField] public int ID { get; private set; }
     [field: SerializeField] public float Health { get; private set; }
 
-    public Action<int> onDie;
+    public Action<int, bool> onDie;
 
     public void Die()
     {
-        onDie?.Invoke(ID);
+        onDie?.Invoke(ID, true);
         Debug.Log($"{gameObject.name} turret is destroyed.");
     }
 
@@ -22,6 +22,6 @@ public class Turret : MonoBehaviour, IDamageble
         if (Health <= 0)
         {
             Die();
-        };
+        }
     }
 }

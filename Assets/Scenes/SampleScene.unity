@@ -1264,6 +1264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b281cc9fd3d054cb6b332bc5c85162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  _waveSettigList:
+  - WaveTime: 15
+    WaveType: 0
+  - WaveTime: 15
+    WaveType: 1
   _timeToSpawn: 5
   _spawnPoints:
   - {fileID: 1192315068}
@@ -1271,8 +1276,7 @@ MonoBehaviour:
   - {fileID: 868485388}
   - {fileID: 1154701064}
   - {fileID: 1421863754}
-  _enemiesPrefab:
-  - {fileID: 6081946788189438311, guid: 431ade212a3aa474785f6b28851071e6, type: 3}
+  _enemyPrefab: {fileID: 8450311242453190760, guid: 33b81f8d4ee0c1641858b184ca7af5b9, type: 3}
   _gameManager: {fileID: 1503618091}
 --- !u!1 &832575517
 GameObject:

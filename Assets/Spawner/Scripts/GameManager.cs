@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         CreateStartTurret();
     }
 
-    public void SelectedTurret(int turretID)
+    public void SelectedTurret(int turretID, bool a)
     {
         onSelectTurret?.Invoke(turretID);
 
@@ -77,9 +77,12 @@ public class GameManager : MonoBehaviour
         onSpawnTurret?.Invoke(spawnTurret, this);
     }
 
-    public void DeleteTurret(int turretID)
+    public void DeleteTurret(int turretID, bool fromEnemy)
     {
         Debug.Log("</color=red>Try destroy turret</color>");
+
+        if (_currentTurretInScene - 1 == 0 && fromEnemy == true)
+            Debug.Log("<color=red><b>GAME OVER</b></color>");
 
         if (MIN_TURRET_IN_SCENE >= _currentTurretInScene) return;
         if (_spawnedTurret.ContainsKey(turretID) == false) return;
