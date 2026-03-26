@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 8328529472281770323}
   - component: {fileID: 3621040628689244868}
   - component: {fileID: 1300569324306074779}
+  - component: {fileID: 2929295716438244209}
   m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
@@ -211,6 +212,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2929295716438244209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474343051254702650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
+  audioSource: {fileID: 0}
+  sampleSize: 1024
+  fftWindow: 4
+  objectToScale: {fileID: 0}
+  minMultiplier: 0.5
+  maxMultiplier: 1.5
+  bassMultiplier: 1
+  smoothTime: 0.1
 --- !u!1 &4169835229138331737
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
   midiMusic: {fileID: 0}
   audioIndex: 5
+  equalizerSize:
+  - {fileID: 2929295716438244209}
 --- !u!65 &-176765953685139554
 BoxCollider:
   m_ObjectHideFlags: 0

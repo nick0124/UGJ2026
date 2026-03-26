@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 6132069811287713830}
   - component: {fileID: 2366915925467949102}
   - component: {fileID: 8706830877766342121}
+  - component: {fileID: 8468294980815634995}
   m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
@@ -180,6 +181,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8468294980815634995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3306565587230423147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
+  audioSource: {fileID: 0}
+  sampleSize: 1024
+  fftWindow: 4
+  objectToScale: {fileID: 0}
+  minMultiplier: 0.5
+  maxMultiplier: 1.5
+  bassMultiplier: 1
+  smoothTime: 0.1
 --- !u!1 &5476884457831725139
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
   midiMusic: {fileID: 0}
   audioIndex: 4
+  equalizerSize:
+  - {fileID: 8468294980815634995}
 --- !u!65 &-2505192497614299033
 BoxCollider:
   m_ObjectHideFlags: 0

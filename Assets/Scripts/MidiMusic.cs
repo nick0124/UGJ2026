@@ -38,6 +38,11 @@ public class MidiMusic : MonoBehaviour
             }
         }
     }
+
+    public AudioSource GetAudioSource()
+    {
+        return audioSource;
+    }
     
     void Start()
     {            

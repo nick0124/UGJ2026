@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretMusic : MonoBehaviour
@@ -8,15 +9,24 @@ public class TurretMusic : MonoBehaviour
     private Shooting shooting;
     private LookAtEnemy lookAtEnemy;
 
+    [SerializeField] private List<EqualizerSize> equalizerSize;
+
     private void Start()
     {
         FindMusicController();
+
+        
         
         if (musicController != null)
         {
             musicController.SetActiveAudio(audioIndex);
             midiMusic = musicController.GetMidiMusic(audioIndex);
             midiMusic.AddMidiNoteListener(OnMidiNote);
+
+            foreach (var item in equalizerSize)
+            {
+                item.SetAudioSource(midiMusic.GetAudioSource());
+            }
 
             shooting = GetComponent<Shooting>();
             lookAtEnemy = GetComponent<LookAtEnemy>();
