@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 4029681023831767592}
   - component: {fileID: 3986152466502496223}
   - component: {fileID: 3438565410125302880}
-  - component: {fileID: 1538266015540794089}
   - component: {fileID: -4664966106316975254}
   - component: {fileID: 6992422961881791097}
   - component: {fileID: -176765953685139554}
@@ -264,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e6056fbdd952c468d9befb3cae5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtEnemy
+  _targetTypeTrigger: 0
   target: {fileID: 0}
   searchRadius: 10
   enemyLayer:
@@ -286,37 +286,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6724813555123848119, guid: 4a9dbb12a6d883f4e9b8bf132e83d1a1, type: 3}
   firePoint: {fileID: 7070264201446625468}
   bulletSpeed: 20
-  fireInterval: 1
-  lookAtEnemy: {fileID: 0}
---- !u!114 &1538266015540794089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4169835229138331737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43836495dd238b24cbb6e74d230234ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Equalizer
-  audioSource: {fileID: 0}
-  spectrumSize: 64
-  fftWindow: 4
-  threshold: 0.01
-  frequencyRange: 0
-  cooldownTime: 0.2
-  useFrequencyRange: 1
-  lowFrequency: 0
-  highFrequency: 0.03
-  objectToScale: {fileID: 8328529472281770323}
-  scaleMultiplier: 10
-  smoothSpeed: 5
-  minScale: 0.5
-  maxScale: 5
-  enableLogging: 1
-  targetObject: {fileID: 4169835229138331737}
-  functionName: Shoot
 --- !u!114 &-4664966106316975254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bd261d32fd23c43aae5ee6a933b0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
+  midiMusic: {fileID: 0}
   audioIndex: 5
 --- !u!65 &-176765953685139554
 BoxCollider:

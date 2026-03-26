@@ -3,6 +3,7 @@ using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class MidiMusic : MonoBehaviour
 {
@@ -12,36 +13,52 @@ public class MidiMusic : MonoBehaviour
     private List<float> noteTimes = new List<float>();
     private int currentNoteIndex = 0;
     private double startTime;
-    private bool isPlaying = false;
     private bool isLooping = true; // Флаг для зацикливания
+
+    private bool isSoundEnabled = false;
+
+    private bool isPlaying = false;
+
+
+    [Header("MIDI Events")]
+    public MidiNoteEvent OnMidiNote;
     
-    void Start()
-    {
-        if (midiFile == null)
-        {
-            Debug.LogError("MIDI файл не назначен!");
-            return;
+    [System.Serializable]
+    public class MidiNoteEvent : UnityEvent<int, float> { }
+
+    public bool IsSoundEnabled 
+    { 
+        get { return isSoundEnabled; }
+        set 
+        { 
+            isSoundEnabled = value;
+            if (audioSource != null)
+            {
+                audioSource.volume = isSoundEnabled ? 1 : 0;
+            }
         }
-        
-        LoadAndStartPlayback();
     }
     
-    void LoadAndStartPlayback()
+    void Start()
+    {            
+        if (OnMidiNote == null)
+            OnMidiNote = new MidiNoteEvent();
+
+        audioSource.volume = 0;
+
+        LoadMidiFile();
+    }
+
+    void LoadMidiFile()
     {
         try
         {
-            // Загружаем MIDI файл
             using (var memoryStream = new System.IO.MemoryStream(midiFile.bytes))
             {
                 var loadedMidiFile = MidiFile.Read(memoryStream);
-                
-                // Получаем все ноты
                 var notes = loadedMidiFile.GetNotes();
-                
-                // Получаем темп для перевода в реальное время
                 var tempoMap = loadedMidiFile.GetTempoMap();
                 
-                // Сохраняем время каждой ноты в секундах
                 noteTimes.Clear();
                 foreach (var note in notes)
                 {
@@ -49,51 +66,42 @@ public class MidiMusic : MonoBehaviour
                     noteTimes.Add(timeInSeconds);
                 }
                 
-                Debug.Log($"Всего нот: {noteTimes.Count}");
-                
-                // Запускаем музыку и синхронизируем время
-                audioSource.Play();
-                audioSource.loop = true;
-                
-                // Используем AudioSettings.dspTime для точной синхронизации
-                startTime = AudioSettings.dspTime;
-                isPlaying = true;
-                
-                // Запускаем корутину для воспроизведения нот
-                StartCoroutine(PlayNotes());
+                Debug.Log($"{gameObject.name}: Загружено нот: {noteTimes.Count}");
             }
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"Ошибка: {e.Message}");
+            Debug.LogError($"Ошибка загрузки MIDI: {e.Message}");
         }
     }
-    
+
+    public void StartPlaybackAtTime(double globalStartTime)
+    {
+        if (isPlaying) return;
+        
+        startTime = globalStartTime;
+        isPlaying = true;
+        currentNoteIndex = 0;
+        
+        audioSource.Play();
+        audioSource.loop = true;
+        
+        StartCoroutine(PlayNotes());
+    }
+
     IEnumerator PlayNotes()
     {
-        while (isLooping) // Бесконечный цикл
+        while (isLooping && isPlaying)
         {
-            // Сбрасываем индекс для нового цикла
-            currentNoteIndex = 0;
-            
-            // Ждем начала следующего цикла
-            yield return new WaitForSeconds(0.1f);
-            
-            while (currentNoteIndex < noteTimes.Count)
+            while (currentNoteIndex < noteTimes.Count && isPlaying)
             {
-                // Используем AudioSettings.dspTime для точного времени
                 double currentTime = AudioSettings.dspTime - startTime;
-                
-                // Получаем время следующей ноты
                 float nextNoteTime = noteTimes[currentNoteIndex];
                 
-                if (currentTime >= nextNoteTime - 0.001) // Небольшой допуск
+                if (currentTime >= nextNoteTime - 0.001)
                 {
-                    Debug.Log($"новая нота - время: {currentTime:F3} сек");
-                    Shoot();
+                    OnMidiNote?.Invoke(currentNoteIndex, (float)currentTime);
                     currentNoteIndex++;
-                    
-                    // Небольшая задержка чтобы не спамить в одном кадре
                     yield return new WaitForSeconds(0.001f);
                 }
                 else
@@ -102,51 +110,30 @@ public class MidiMusic : MonoBehaviour
                 }
             }
             
-            // Когда все ноты сыграны
-            Debug.Log("Все ноты сыграны - начинаем новый цикл");
-            
-            // Сбрасываем время для синхронизации с музыкой
-            // Ждем окончания текущего цикла аудио (если аудио зациклено)
-            float audioLength = audioSource.clip.length;
-            double timeUntilNextLoop = audioLength - (AudioSettings.dspTime - startTime);
-            
-            if (timeUntilNextLoop > 0)
+            if (isPlaying)
             {
-                yield return new WaitForSeconds((float)timeUntilNextLoop);
+                // Цикл - сброс времени начала для следующего прохода
+                float audioLength = audioSource.clip.length;
+                double timeUntilNextLoop = audioLength - (AudioSettings.dspTime - startTime);
+                
+                if (timeUntilNextLoop > 0)
+                {
+                    yield return new WaitForSeconds((float)timeUntilNextLoop);
+                }
+                
+                startTime = AudioSettings.dspTime;
+                currentNoteIndex = 0;
             }
-            
-            // Сбрасываем время начала для следующего цикла
-            startTime = AudioSettings.dspTime;
         }
     }
-    
-    // Метод для остановки зацикливания
-    public void StopLooping()
+
+    public void AddMidiNoteListener(UnityAction<int, float> listener)
     {
-        isLooping = false;
+        OnMidiNote.AddListener(listener);
     }
     
-    // Метод для включения/выключения зацикливания
-    public void SetLooping(bool loop)
+    public void RemoveMidiNoteListener(UnityAction<int, float> listener)
     {
-        isLooping = loop;
-    }
-
-
-    [Header("Shooting settings")]
-    public GameObject bulletPrefab;
-    public float bulletSpeed = 20f;
-
-    public void Shoot()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-        
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.linearVelocity = transform.forward * bulletSpeed;
-        }
-        
-        Destroy(bullet, 3f);
+        OnMidiNote.RemoveListener(listener);
     }
 }
