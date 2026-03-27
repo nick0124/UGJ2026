@@ -67,7 +67,8 @@ public class GameManager : MonoBehaviour
         if (_spawnedTurret.ContainsKey(turretID) == true) return;
 
         Turret spawnTurret = _spawner.CreateObject<Turret>(selectedTurret, position);
-        
+
+        spawnTurret.transform.rotation = Quaternion.Euler(270, 0f, 0f);
         _spawnedTurret.Add(turretID, spawnTurret);
         _currentTurretInScene++;
 

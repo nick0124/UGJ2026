@@ -1265,10 +1265,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   _waveSettigList:
-  - WaveTime: 15
-    WaveType: 0
-  - WaveTime: 15
+  - WaveTime: 20
+    WaveType: 3
+  - WaveTime: 20
     WaveType: 1
+  - WaveTime: 20
+    WaveType: 0
   _timeToSpawn: 5
   _spawnPoints:
   - {fileID: 1192315068}
@@ -2144,21 +2146,18 @@ MonoBehaviour:
     m_Bits: 64
   _maxTurretInPlace: 4
   _turretPrefab:
-  - {fileID: -534610379049544990, guid: c5649ac99d8a29c488be855e0be3772e, type: 3}
-  - {fileID: 6202928155031235218, guid: 873af50e13df6c44aa0da158b3194792, type: 3}
-  - {fileID: 2857682785234411818, guid: 8a5a25775a58537429c8aaaaae2e6293, type: 3}
-  - {fileID: 7969641058001302093, guid: d34c5303a74ced149ab4a2a728f1bda9, type: 3}
-  - {fileID: 4611253063402469882, guid: 9efa633fc7c3ddd40a6f39520763377d, type: 3}
-  - {fileID: -4664966106316975254, guid: 7061012213b367c498f984d7b6f04f0f, type: 3}
-  - {fileID: -3061308374692224547, guid: fc5ca3176f28c87439c57735c4063422, type: 3}
-  - {fileID: -620299514532306061, guid: 47fea17f409581041a66ae268132c192, type: 3}
-  - {fileID: 7815777888556114888, guid: b888bf85c3a8c064ab5120b8b23df3f8, type: 3}
-  - {fileID: 6390087121925132372, guid: 6f794aead6e74aa47ae5321038b99eb7, type: 3}
-  - {fileID: 4060329144391797145, guid: 3847e165b6803ae4f9be546532228ebd, type: 3}
-  - {fileID: -2528267281792580543, guid: be994fde7a59019499f8d77ccd84f827, type: 3}
-  - {fileID: -3418265586553531868, guid: f77e7cf1e1fbec24eaa241b2c68a5a18, type: 3}
-  - {fileID: -3549137165013841802, guid: 874a11ee461f74e45b297c16722c757c, type: 3}
-  - {fileID: -6082102474791951465, guid: df48f6a9d33af4b4f9e2f0edcd61b3c5, type: 3}
+  - {fileID: 4425154966728865040, guid: a1c803077e7e6684e9de5b24dee61ba9, type: 3}
+  - {fileID: 1117686431944021367, guid: fc950d9c9041dc648bd0f3310db65a04, type: 3}
+  - {fileID: 2093100374073320928, guid: edc99582db510944196754c886e441f7, type: 3}
+  - {fileID: 2149013039776941630, guid: db8ab82d9b9320f4c933648240ef1265, type: 3}
+  - {fileID: 8819202032081875746, guid: 74d7df1be48007341a428c8f56a9054b, type: 3}
+  - {fileID: 5123890863021031638, guid: aad5e1655d7252d47a60dc6c7454543a, type: 3}
+  - {fileID: 3718703144198781485, guid: cfe88a4cea28d0745a63c84cd3201f77, type: 3}
+  - {fileID: 2342158439566834566, guid: 16e115bccb5658046a00c27eeb337223, type: 3}
+  - {fileID: 7135404171561605851, guid: 902de16fe0763ca4298b524bfd6b6d9b, type: 3}
+  - {fileID: 8066377015772603599, guid: 7ac5f9b6ec9802545a49a896c03eac1d, type: 3}
+  - {fileID: 3305703751251902038, guid: c7e22f8b62f18224fbb3f370ea4ca064, type: 3}
+  - {fileID: 7927812332609411563, guid: 1145bf9b7fd933443b6f381ff2d2a854, type: 3}
 --- !u!4 &1503618092
 Transform:
   m_ObjectHideFlags: 0

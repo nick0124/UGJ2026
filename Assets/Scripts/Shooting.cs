@@ -43,7 +43,7 @@ public class Shooting : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.linearVelocity = firePoint.forward * bulletSpeed;
+            rb.linearVelocity = firePoint.right * bulletSpeed;
         }
         
         // Уничтожаем через 3 секунды

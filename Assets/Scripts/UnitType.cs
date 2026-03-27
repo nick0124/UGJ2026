@@ -2,7 +2,8 @@ using UnityEngine;
 
 public enum UnitType
 {
-    Red,
+    Purple,
+    Blue,
     Yellow,
     Green
 }

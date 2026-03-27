@@ -3,8 +3,8 @@ using UnityEngine;
 public class LookAtEnemy : MonoBehaviour
 {
     [Header("Настройки")]
+    [SerializeField] private Transform _rotationObject;
     [SerializeField] private UnitType _targetTypeTrigger;
-    [SerializeField] private Transform target;
 
     [Header("Настройки поиска")]
     [SerializeField] private float searchRadius = 10f;
@@ -69,13 +69,14 @@ public class LookAtEnemy : MonoBehaviour
 
     void InstantRotateY()
     {
-        Vector3 directionToTarget = nearestEnemy.transform.position - transform.position;
-        directionToTarget.y = 0;
-        
-        if (directionToTarget != Vector3.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(directionToTarget);
-        }
+        Vector3 worldDirection = nearestEnemy.transform.position - transform.position;
+        Vector3 localDirection = transform.InverseTransformDirection(worldDirection);
+
+        float targetAngle = Mathf.Atan2(localDirection.y, localDirection.x) * Mathf.Rad2Deg;
+
+        float curentAngle = _rotationObject.localEulerAngles.z;
+        float newAngle = Mathf.LerpAngle(curentAngle, targetAngle, 5f * Time.deltaTime);
+        _rotationObject.localRotation = Quaternion.Euler(0, 0, newAngle);  
     }
     
     public Vector3 GetDirectionToNearestEnemy()

@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+using System;
 
 [RequireComponent(typeof(EnemyUpgrade))]
 public class Enemy : MonoBehaviour, IDamageble
@@ -9,6 +11,9 @@ public class Enemy : MonoBehaviour, IDamageble
     [field: SerializeField] public List<UnitType> Types { get; private set; }
 
     private EnemyUpgrade _upgrade;
+
+
+    public Action onTakeDamage;
 
     private void Awake()
     {
@@ -31,6 +36,7 @@ public class Enemy : MonoBehaviour, IDamageble
         Debug.Log($"Enemy took {damage} damage!");
 
         _health -= damage;
+        onTakeDamage?.Invoke();
 
         if (_health <= 0)
             Die();

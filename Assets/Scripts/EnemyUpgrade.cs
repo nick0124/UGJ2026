@@ -20,12 +20,6 @@ public class EnemyUpgrade : MonoBehaviour
 
         UpgradeData data = _upgradeData.Find(d => d.UpgradeType == type);
 
-        if(data.SpawnPoint.childCount > 0)
-        {
-            for(int i = 0; i < data.SpawnPoint.childCount; i++) 
-                Destroy(data.SpawnPoint.GetChild(i).gameObject);
-        }
-
         GameObject obj = Instantiate(data.UpgradeObject, Vector3.zero, Quaternion.identity);
        
         obj.transform.SetParent(data.SpawnPoint, false);

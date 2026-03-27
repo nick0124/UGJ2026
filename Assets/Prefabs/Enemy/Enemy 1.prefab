@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 171990242015114106}
   - component: {fileID: 8450311242453190760}
   - component: {fileID: 4454348220998979064}
+  - component: {fileID: -4468677206779919684}
   m_Layer: 8
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1408586734492016815}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.31054, y: 2.34, z: -0.6544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57,8 +58,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7548321, y: 1.7505674, z: 1.8664013}
-  m_Center: {x: 0.3774162, y: 0.37528372, z: -0.104771435}
+  m_Size: {x: 1.4787405, y: 1.5356886, z: 1.8664013}
+  m_Center: {x: 0.033669323, y: 1.1717521, z: -0.104771435}
 --- !u!114 &3857681043909152382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ MonoBehaviour:
     m_Bits: 128
   moveSpeed: 2.74
   rotationSpeed: 360
-  stoppingDistance: 2
+  stoppingDistance: 3
   moveOnStart: 1
   rotateTowardsTarget: 1
   smoothRotation: 1
@@ -115,7 +116,10 @@ MonoBehaviour:
   - SpawnPoint: {fileID: 178550752365744072}
     UpgradeObject: {fileID: 743127326349645508, guid: d0028cbe32a1f3f4b9b2ac6cb92979cc, type: 3}
     UpgradeType: 2
-  _baseType: 0
+  - SpawnPoint: {fileID: 178550752365744072}
+    UpgradeObject: {fileID: 1279144410011735759, guid: 7c91245890a664b43850efc04526035c, type: 3}
+    UpgradeType: 0
+  _baseType: 3
 --- !u!114 &8450311242453190760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629425baa64f93d4bab73c6ff6b2b9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  _health: 120
-  <Types>k__BackingField: 00000000
+  _health: 20
+  <Types>k__BackingField: 03000000
 --- !u!114 &4454348220998979064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +163,25 @@ MonoBehaviour:
   enableLogging: 1
   targetObject: {fileID: 1434761057561463323, guid: 431ade212a3aa474785f6b28851071e6, type: 3}
   functionName: MoveTowardsTarget
+--- !u!114 &-4468677206779919684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408586734492016815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e6947c42fa763489e51dc7f8eeff22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  shakeDuration: 0.2
+  shakeStrength: 0.3
+  shakeVibrato: 5
+  knockbackForce: 1
+  knockbackDuration: 0.2
+  hoverHeight: 0.5
+  hoverDuration: 2
 --- !u!1001 &2663580082049521925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,6 +245,18 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5f6c3ab0b6d360b4099bfc375e9c1731, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8595513888505404444, guid: 5f6c3ab0b6d360b4099bfc375e9c1731, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8595513888505404444, guid: 5f6c3ab0b6d360b4099bfc375e9c1731, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8595513888505404444, guid: 5f6c3ab0b6d360b4099bfc375e9c1731, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 5f6c3ab0b6d360b4099bfc375e9c1731, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
