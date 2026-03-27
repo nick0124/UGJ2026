@@ -3,28 +3,46 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    [SerializeField] private List<AudioSource> audioSources = new List<AudioSource>();
-    
+    [SerializeField] private List<MidiMusic> audioSources = new List<MidiMusic>();
+
     void Start()
     {
+        var globalStartTime = AudioSettings.dspTime;
 
+        foreach (var player in audioSources)
+        {
+            player.StartPlaybackAtTime(globalStartTime);
+        }
     }
-    
+        
     public void SetActiveAudio(int index)
     {
         for (int i = 0; i < audioSources.Count; i++)
         {
             if (i == index)
             {
-                if (audioSources[i].volume == 0f)
+                if (audioSources[i].IsSoundEnabled)
                 {
-                    audioSources[i].volume = 1f;
+                    audioSources[i].IsSoundEnabled = false;
                 }
                 else
                 {
-                    audioSources[i].volume = 0f;
+                    audioSources[i].IsSoundEnabled = true;
                 }
             }
         }
+    }
+
+    public MidiMusic GetMidiMusic(int index)
+    {
+        for (int i = 0; i < audioSources.Count; i++)
+        {
+            if (i == index)
+            {
+                return audioSources[i];
+            }
+        }
+
+        return null;
     }
 }

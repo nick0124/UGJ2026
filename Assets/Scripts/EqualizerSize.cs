@@ -9,8 +9,10 @@ public class EqualizerSize : MonoBehaviour
 
     [Header("Scale Settings")]
     public Transform objectToScale;
-    public Vector3 minScale = Vector3.one;
-    public Vector3 maxScale = new Vector3(3f, 3f, 3f);
+    [Range(0f, 5f)]
+    public float minMultiplier = 0.5f;      // Минимальный множитель размера
+    [Range(0f, 5f)]
+    public float maxMultiplier = 1.5f;      
 
     [Header("Frequency Bands")]
     [Range(0, 10)]
@@ -18,18 +20,13 @@ public class EqualizerSize : MonoBehaviour
 
     [Header("Smoothing")]
     [Range(0, 1)]
-    public float smoothTime = 0.5f; // Скорость сглаживания
-
-
-    [Header("Logging Settings")]
-    public GameObject bulletPrefab;
-    public float shootThreshold = 0.7f; // Порог срабатывания лога (0-1)
-    public float shootCooldown = 0f; // Задержка между логами в секундах
+    public float smoothTime = 0.1f; // Скорость сглаживания
 
     private float[] spectrumData;
     private float currentBass;
     private Vector3 targetScale;
     private Vector3 velocityScale = Vector3.zero;
+    private Vector3 originalScale;
 
     private float lastLogTime;
 
@@ -42,8 +39,10 @@ public class EqualizerSize : MonoBehaviour
         if (objectToScale == null)
             objectToScale = transform;
 
+        originalScale = objectToScale.localScale;
+
         spectrumData = new float[sampleSize];
-        targetScale = minScale;
+        targetScale = originalScale * minMultiplier;
     }
 
     void Update()
@@ -51,10 +50,7 @@ public class EqualizerSize : MonoBehaviour
         if (audioSource == null || spectrumData == null)
             return;
 
-        // Получаем спектр данных
         audioSource.GetSpectrumData(spectrumData, 0, fftWindow);
-
-        MusicShoot();
 
         int bassBands = sampleSize / 8;
 
@@ -65,7 +61,9 @@ public class EqualizerSize : MonoBehaviour
         }
         currentBass = Mathf.Clamp01(bassSum / bassBands * bassMultiplier * 100);
 
-        targetScale = Vector3.Lerp(minScale, maxScale, currentBass);
+        float currentMultiplier = Mathf.Lerp(minMultiplier, maxMultiplier, currentBass);
+
+        targetScale = originalScale * currentMultiplier;
 
         objectToScale.localScale = Vector3.SmoothDamp(
             objectToScale.localScale,
@@ -75,29 +73,8 @@ public class EqualizerSize : MonoBehaviour
         );
     }
 
-    void MusicShoot()
+    public void SetAudioSource(AudioSource newAudioSource)
     {
-        if (Time.time - lastLogTime < shootCooldown)
-            return;
-
-        if (currentBass > shootThreshold)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 0, 1), transform.rotation);
-            bullet.transform.localScale = Vector3.SmoothDamp(
-                objectToScale.localScale,
-                targetScale,
-                ref velocityScale,
-                smoothTime
-            );
-
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.linearVelocity = transform.forward * 20;
-            }
-
-            Destroy(bullet, 3f);
-            lastLogTime = Time.time;
-        }
+        audioSource = newAudioSource;
     }
 }

@@ -1,21 +1,35 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretMusic : MonoBehaviour
 {
     private MusicController musicController;
+    public MidiMusic midiMusic;
     [SerializeField] private int audioIndex;
+    private Shooting shooting;
+    private LookAtEnemy lookAtEnemy;
+
+    [SerializeField] private List<EqualizerSize> equalizerSize;
 
     private void Start()
     {
-        // Находим MusicController на сцене
         FindMusicController();
+
         
-        // Вызываем метод при создании объекта
+        
         if (musicController != null)
         {
-            // Здесь можно задать нужный индекс. 
-            // Вариант 1: задать индекс в инспекторе
             musicController.SetActiveAudio(audioIndex);
+            midiMusic = musicController.GetMidiMusic(audioIndex);
+            midiMusic.AddMidiNoteListener(OnMidiNote);
+
+            foreach (var item in equalizerSize)
+            {
+                item.SetAudioSource(midiMusic.GetAudioSource());
+            }
+
+            shooting = GetComponent<Shooting>();
+            lookAtEnemy = GetComponent<LookAtEnemy>();
             
             // Вариант 2: если нужно передавать индекс из другого места
             // musicController.SetActiveAudio(GetComponent<SomeOtherScript>().someIndex);
@@ -28,16 +42,15 @@ public class TurretMusic : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Вызываем метод при удалении объекта
         if (musicController != null)
         {
             musicController.SetActiveAudio(audioIndex);
+            midiMusic.RemoveMidiNoteListener(OnMidiNote);
         }
     }
 
     private void FindMusicController()
     {
-        // Ищем объект со скриптом MusicController
         musicController = FindFirstObjectByType<MusicController>();
         
         if (musicController == null)
@@ -45,10 +58,13 @@ public class TurretMusic : MonoBehaviour
             Debug.LogError("MusicController не найден на сцене!");
         }
     }
-    
-    // Публичный метод для установки индекса, если нужно изменить его динамически
-    public void SetAudioIndex(int index)
+
+    void OnMidiNote(int noteIndex, float time)
     {
-        audioIndex = index;
+        Debug.Log($"Нота #{noteIndex} в момент {time} секунд");
+        if(lookAtEnemy.IsEnemyInRange())
+        {
+            shooting.Shoot();
+        }
     }
 }

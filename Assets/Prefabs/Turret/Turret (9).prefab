@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8590130225735710861}
+  - component: {fileID: 741354100332284850}
   m_Layer: 7
   m_Name: SoundScale
   m_TagString: Untagged
@@ -32,6 +33,26 @@ Transform:
   - {fileID: 7413167029339063971}
   m_Father: {fileID: 3919244955566338784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741354100332284850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10927682618284779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
+  audioSource: {fileID: 0}
+  sampleSize: 1024
+  fftWindow: 4
+  objectToScale: {fileID: 0}
+  minMultiplier: 0.5
+  maxMultiplier: 1.5
+  bassMultiplier: 1
+  smoothTime: 0.1
 --- !u!1 &2998177900393069041
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +95,6 @@ GameObject:
   - component: {fileID: 3919244955566338784}
   - component: {fileID: 8142546832450794894}
   - component: {fileID: 5933547148980329448}
-  - component: {fileID: 3019841947578169526}
   - component: {fileID: 6390087121925132372}
   - component: {fileID: -1209616332620562065}
   - component: {fileID: 8036696581445735329}
@@ -117,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e6056fbdd952c468d9befb3cae5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtEnemy
+  _targetTypeTrigger: 0
   target: {fileID: 0}
   searchRadius: 10
   enemyLayer:
@@ -139,37 +160,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6724813555123848119, guid: 4a9dbb12a6d883f4e9b8bf132e83d1a1, type: 3}
   firePoint: {fileID: 5450855498373341139}
   bulletSpeed: 20
-  fireInterval: 1
-  lookAtEnemy: {fileID: 0}
---- !u!114 &3019841947578169526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3475835044979375273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43836495dd238b24cbb6e74d230234ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Equalizer
-  audioSource: {fileID: 0}
-  spectrumSize: 64
-  fftWindow: 4
-  threshold: 0.01
-  frequencyRange: 0
-  cooldownTime: 0.2
-  useFrequencyRange: 1
-  lowFrequency: 0
-  highFrequency: 0.03
-  objectToScale: {fileID: 3624862545701630298}
-  scaleMultiplier: 10
-  smoothSpeed: 5
-  minScale: 0.5
-  maxScale: 5
-  enableLogging: 1
-  targetObject: {fileID: 3475835044979375273}
-  functionName: Shoot
 --- !u!114 &6390087121925132372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bd261d32fd23c43aae5ee6a933b0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
+  midiMusic: {fileID: 0}
   audioIndex: 9
+  equalizerSize:
+  - {fileID: 1694750566057347312}
+  - {fileID: 741354100332284850}
 --- !u!65 &8036696581445735329
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -500,6 +494,7 @@ GameObject:
   - component: {fileID: 3624862545701630298}
   - component: {fileID: 564505184884838580}
   - component: {fileID: 5236530297464123361}
+  - component: {fileID: 1694750566057347312}
   m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
@@ -579,3 +574,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1694750566057347312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962533992693224388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
+  audioSource: {fileID: 0}
+  sampleSize: 1024
+  fftWindow: 4
+  objectToScale: {fileID: 0}
+  minMultiplier: 0.5
+  maxMultiplier: 1.5
+  bassMultiplier: 1
+  smoothTime: 0.1

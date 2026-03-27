@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 4127931910241456267}
   - component: {fileID: 1760697375096872740}
   - component: {fileID: 7802468901721522283}
+  - component: {fileID: 8334933168574105194}
   m_Layer: 7
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -270,6 +271,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8334933168574105194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361546992601749742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
+  audioSource: {fileID: 0}
+  sampleSize: 1024
+  fftWindow: 4
+  objectToScale: {fileID: 0}
+  minMultiplier: 0.5
+  maxMultiplier: 1.5
+  bassMultiplier: 1
+  smoothTime: 0.1
 --- !u!1 &4925298821616572940
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +302,6 @@ GameObject:
   - component: {fileID: 9015048221825890805}
   - component: {fileID: 2005393039057757268}
   - component: {fileID: 3654965681551405343}
-  - component: {fileID: 1496396233236014138}
   - component: {fileID: -3549137165013841802}
   - component: {fileID: 5026980375043819064}
   - component: {fileID: -7272282483648852891}
@@ -323,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e6056fbdd952c468d9befb3cae5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtEnemy
+  _targetTypeTrigger: 0
   target: {fileID: 0}
   searchRadius: 10
   enemyLayer:
@@ -345,37 +366,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6724813555123848119, guid: 4a9dbb12a6d883f4e9b8bf132e83d1a1, type: 3}
   firePoint: {fileID: 8749383681909107516}
   bulletSpeed: 20
-  fireInterval: 1
-  lookAtEnemy: {fileID: 0}
---- !u!114 &1496396233236014138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4925298821616572940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43836495dd238b24cbb6e74d230234ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Equalizer
-  audioSource: {fileID: 0}
-  spectrumSize: 64
-  fftWindow: 4
-  threshold: 0.01
-  frequencyRange: 0
-  cooldownTime: 0.2
-  useFrequencyRange: 1
-  lowFrequency: 0
-  highFrequency: 0.03
-  objectToScale: {fileID: 0}
-  scaleMultiplier: 10
-  smoothSpeed: 5
-  minScale: 0.5
-  maxScale: 5
-  enableLogging: 1
-  targetObject: {fileID: 4925298821616572940}
-  functionName: Shoot
 --- !u!114 &-3549137165013841802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +393,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bd261d32fd23c43aae5ee6a933b0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
+  midiMusic: {fileID: 0}
   audioIndex: 13
+  equalizerSize:
+  - {fileID: 2188230861615217128}
+  - {fileID: 3555579745084669578}
+  - {fileID: 8334933168574105194}
 --- !u!65 &-7272282483648852891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -501,6 +496,7 @@ GameObject:
   - component: {fileID: 6679781562207066010}
   - component: {fileID: 3169589090695381606}
   - component: {fileID: 6692529455135988373}
+  - component: {fileID: 2188230861615217128}
   m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
@@ -580,6 +576,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2188230861615217128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767321043814132801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
+  audioSource: {fileID: 0}
+  sampleSize: 1024
+  fftWindow: 4
+  objectToScale: {fileID: 0}
+  minMultiplier: 0.5
+  maxMultiplier: 1.5
+  bassMultiplier: 1
+  smoothTime: 0.1
 --- !u!1 &8694647037987812139
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +607,7 @@ GameObject:
   - component: {fileID: 7724712872372724271}
   - component: {fileID: 2958640894395103510}
   - component: {fileID: 4473017477776374981}
+  - component: {fileID: 3555579745084669578}
   m_Layer: 7
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -670,3 +687,23 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3555579745084669578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694647037987812139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
+  audioSource: {fileID: 0}
+  sampleSize: 1024
+  fftWindow: 4
+  objectToScale: {fileID: 0}
+  minMultiplier: 0.5
+  maxMultiplier: 1.5
+  bassMultiplier: 1
+  smoothTime: 0.1

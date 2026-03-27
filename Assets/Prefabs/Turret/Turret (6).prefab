@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 803878217576557599}
   - component: {fileID: 4188959435569018162}
   - component: {fileID: 3105289228865750705}
-  - component: {fileID: 5190961317330482886}
   - component: {fileID: -3061308374692224547}
   - component: {fileID: 272625413019335550}
   - component: {fileID: -402815511131302420}
@@ -53,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e6056fbdd952c468d9befb3cae5d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtEnemy
+  _targetTypeTrigger: 0
   target: {fileID: 0}
   searchRadius: 10
   enemyLayer:
@@ -75,37 +75,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6724813555123848119, guid: 4a9dbb12a6d883f4e9b8bf132e83d1a1, type: 3}
   firePoint: {fileID: 463109969541765251}
   bulletSpeed: 20
-  fireInterval: 1
-  lookAtEnemy: {fileID: 0}
---- !u!114 &5190961317330482886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620477347211466138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43836495dd238b24cbb6e74d230234ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Equalizer
-  audioSource: {fileID: 0}
-  spectrumSize: 64
-  fftWindow: 4
-  threshold: 0.01
-  frequencyRange: 0
-  cooldownTime: 0.2
-  useFrequencyRange: 1
-  lowFrequency: 0
-  highFrequency: 0.03
-  objectToScale: {fileID: 8128354214080207451}
-  scaleMultiplier: 10
-  smoothSpeed: 5
-  minScale: 0.5
-  maxScale: 5
-  enableLogging: 1
-  targetObject: {fileID: 620477347211466138}
-  functionName: Shoot
 --- !u!114 &-3061308374692224547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bd261d32fd23c43aae5ee6a933b0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretMusic
+  midiMusic: {fileID: 0}
   audioIndex: 6
+  equalizerSize:
+  - {fileID: 6974115364351996014}
 --- !u!65 &-402815511131302420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -375,6 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6994541523571419221}
+  - component: {fileID: 6974115364351996014}
   m_Layer: 7
   m_Name: SoundScale
   m_TagString: Untagged
@@ -398,6 +371,26 @@ Transform:
   - {fileID: 8128354214080207451}
   m_Father: {fileID: 803878217576557599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6974115364351996014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072887292080445958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d6966eb5292cd45a6745b262ee2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EqualizerSize
+  audioSource: {fileID: 0}
+  sampleSize: 1024
+  fftWindow: 4
+  objectToScale: {fileID: 0}
+  minMultiplier: 0.5
+  maxMultiplier: 1.5
+  bassMultiplier: 1
+  smoothTime: 0.1
 --- !u!1 &8063746707971502440
 GameObject:
   m_ObjectHideFlags: 0
