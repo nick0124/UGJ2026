@@ -245,6 +245,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6724813555123848119, guid: 4a9dbb12a6d883f4e9b8bf132e83d1a1, type: 3}
   firePoint: {fileID: 932852853256919296}
   bulletSpeed: 20
+  bulletScale: 1
+  bulletMaterial: {fileID: 0}
 --- !u!114 &8066377015772603599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,8 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a65574ead44d2b41a6b2f07aed32be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Turret
-  <Icon>k__BackingField: {fileID: 0}
-  <ID>k__BackingField: 9
+  <Icon>k__BackingField: {fileID: 2800000, guid: 7e91697b3b7a9ba419e8649973c0a3ff, type: 3}
+  <ID>k__BackingField: 3
   <Health>k__BackingField: 100
 --- !u!114 &2779889899004173930
 MonoBehaviour:

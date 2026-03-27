@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a65574ead44d2b41a6b2f07aed32be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Turret
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 2800000, guid: 62137b12074528145befd86fa98746c5, type: 3}
   <ID>k__BackingField: 1
   <Health>k__BackingField: 100
 --- !u!114 &5895775046498910893
