@@ -276,6 +276,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6724813555123848119, guid: 4a9dbb12a6d883f4e9b8bf132e83d1a1, type: 3}
   firePoint: {fileID: 4105298474780074947}
   bulletSpeed: 20
+  bulletMaterial: {fileID: 2100000, guid: 8eaa539167fe76549be3e2f46fab960c, type: 2}
 --- !u!114 &2093100374073320928
 MonoBehaviour:
   m_ObjectHideFlags: 0
