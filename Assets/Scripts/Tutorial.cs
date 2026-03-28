@@ -71,6 +71,10 @@ public class Tutorial : MonoBehaviour
         if (currentStepIndex == 0)
         {
             GoToMainMenu();
+        }else
+        {
+            currentStepIndex--;
+            ShowCurrentStep();
         }
     }
     
