@@ -327,6 +327,6 @@ MonoBehaviour:
   fftWindow: 4
   objectToScale: {fileID: 0}
   minMultiplier: 0.8
-  maxMultiplier: 1.2
-  bassMultiplier: 1
-  smoothTime: 0.1
+  maxMultiplier: 1.6
+  bassMultiplier: 3
+  smoothTime: 0.05

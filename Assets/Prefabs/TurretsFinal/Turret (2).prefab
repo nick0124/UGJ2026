@@ -142,8 +142,8 @@ MonoBehaviour:
   objectToScale: {fileID: 0}
   minMultiplier: 0.8
   maxMultiplier: 1.2
-  bassMultiplier: 1
-  smoothTime: 0.1
+  bassMultiplier: 2
+  smoothTime: 0
 --- !u!1 &5799618086272234189
 GameObject:
   m_ObjectHideFlags: 0
