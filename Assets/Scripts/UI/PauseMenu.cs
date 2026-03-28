@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     private void OnEnable()
     {
         _resumeButton.onClick.AddListener(() => CloseMenu());
-        _mainMenuButton.onClick.AddListener(() => LoadScene(2));
+        _mainMenuButton.onClick.AddListener(() => LoadScene(0));
         _settingButton.onClick.AddListener(() => _settingMenu.OpenMenu());
     }
 

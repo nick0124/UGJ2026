@@ -12,7 +12,7 @@ public class WinMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        _mainMenuButton.onClick.AddListener(() => LoadScene(2));
+        _mainMenuButton.onClick.AddListener(() => LoadScene(0));
     }
 
     private void OnDisable()

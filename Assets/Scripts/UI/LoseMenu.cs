@@ -13,8 +13,8 @@ public class LoseMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        _restartButton.onClick.AddListener(() => LoadScene(1));
-        _mainMenuButton.onClick.AddListener(() => LoadScene(2));
+        _restartButton.onClick.AddListener(() => LoadScene(2));
+        _mainMenuButton.onClick.AddListener(() => LoadScene(0));
     }
 
     private void OnDisable()
