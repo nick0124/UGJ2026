@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Space(15)]
     [Header("<color=red>UI Links</color>")]
     [SerializeField] private LoseMenu _loseMenu;
+    [SerializeField] private WinMenu _winMenu;
 
     private Dictionary<int, Turret> _spawnedTurret = new();
 
@@ -122,6 +123,7 @@ public class GameManager : MonoBehaviour
         if (_currentPoint >= _totalPointToWin)
         {
             Debug.Log("<color=green><b>WIN GAME</b></color>");
+            _winMenu.OpenMenu();
         }
 
         onChangePoint?.Invoke(_currentPoint, _totalPointToWin);
