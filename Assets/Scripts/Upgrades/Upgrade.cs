@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent (typeof(DropAnimation))]
 public class Upgrade : MonoBehaviour
 {
     [Header("<color=green><b>Main Settings</b></color>")]

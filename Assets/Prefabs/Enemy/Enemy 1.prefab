@@ -58,8 +58,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4787405, y: 1.5356886, z: 1.8664013}
-  m_Center: {x: 0.033669323, y: 1.1717521, z: -0.104771435}
+  m_Size: {x: 1.4787405, y: 3.2223787, z: 1.8664013}
+  m_Center: {x: 0.033669353, y: 1.1575284, z: -0.104771435}
 --- !u!114 &3857681043909152382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
   _damage: 10
-  _delay: 5
+  _delay: 2
 --- !u!114 &171990242015114106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   - SpawnPoint: {fileID: 3188678622700174049}
     UpgradeObject: {fileID: 743127326349645508, guid: d0028cbe32a1f3f4b9b2ac6cb92979cc, type: 3}
     UpgradeType: 4
-  _interactRadius: 20
+  _interactRadius: 10
   _interactMask:
     serializedVersion: 2
     m_Bits: 256
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629425baa64f93d4bab73c6ff6b2b9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  _health: 10
+  _health: 20
   <Types>k__BackingField: 
 --- !u!114 &4454348220998979064
 MonoBehaviour:
@@ -216,7 +216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f6c3ab0b6d360b4099bfc375e9c1731, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f6c3ab0b6d360b4099bfc375e9c1731, type: 3}
       propertyPath: m_LocalPosition.z

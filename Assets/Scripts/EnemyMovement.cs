@@ -103,6 +103,9 @@ using UnityEngine;
     private void OnTargetReached()
     {
         Debug.Log($"Цель достигнута: {target.name}");
+
+        IDamageble triggerTarget = target.GetComponent<IDamageble>();
+        onSetTarget?.Invoke(triggerTarget);
         isMoving = false;
     }
         
@@ -129,11 +132,9 @@ using UnityEngine;
         }
 
         this.target = target;
-        IDamageble triggerTarget = target.GetComponent<IDamageble>();
 
         isMoving = true;
 
-        onSetTarget?.Invoke(triggerTarget);
         Debug.Log($"Hit name <color=green>{target?.transform.name}</color>");
     }
     

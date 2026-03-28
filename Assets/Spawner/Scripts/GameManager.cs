@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     [Header("Tower Options")]
     [SerializeField] private List<Turret> _turretPrefab;
 
+    [Space(15)]
+    [Header("<color=red>UI Links</color>")]
+    [SerializeField] private LoseMenu _loseMenu;
+
     private Dictionary<int, Turret> _spawnedTurret = new();
 
     private bool _isSelectTurret = false;
@@ -90,8 +94,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("</color=red>Try destroy turret</color>");
 
         if (_currentTurretInScene - 1 == 0 && fromEnemy == true)
+        {
+            _loseMenu.OpenMenu();
             Debug.Log("<color=red><b>GAME OVER</b></color>");
-
+        }
+            
         if (MIN_TURRET_IN_SCENE >= _currentTurretInScene) return;
         if (_spawnedTurret.ContainsKey(turretID) == false) return;
 
