@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LayerMask _spawnTurretMask;
     [SerializeField] private int _maxTurretInPlace;
 
+    [Header("<color=green>Game Setting</color>")]
+    [SerializeField] private int _totalPointToWin = 100;
+    [SerializeField] private int _pointToKillEnemy = 5;
+
     [Header("Tower Options")]
     [SerializeField] private List<Turret> _turretPrefab;
 
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour
     private int _selectedTurretID;
     private int _currentTurretInScene;
 
+    private int _currentPoint;
+
     private Spawner _spawner;
     private PlayerAction _playerAction;
 
@@ -30,6 +36,7 @@ public class GameManager : MonoBehaviour
     public Action<int> onDestroyTurret;
     public Action<int> onSelectTurret;
     public Action<int, int> onChangeTurret;
+    public Action<int, int> onChangePoint;
 
     private void Awake()
     {
@@ -99,6 +106,18 @@ public class GameManager : MonoBehaviour
 
         onChangeTurret?.Invoke(_currentTurretInScene, _maxTurretInPlace);
         onDestroyTurret?.Invoke(turretID);
+    }
+
+    public void CheckEndGame()
+    {
+        _currentPoint += _pointToKillEnemy;
+
+        if (_currentPoint >= _totalPointToWin)
+        {
+            Debug.Log("<color=green><b>WIN GAME</b></color>");
+        }
+
+        onChangePoint?.Invoke(_currentPoint, _totalPointToWin);
     }
 
     private void CreateStartTurret()

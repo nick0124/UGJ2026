@@ -2,32 +2,26 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using UnityEditor;
 
 [RequireComponent(typeof(EnemyUpgrade))]
 public class Enemy : MonoBehaviour, IDamageble
 {
     [SerializeField] private float _health;
-
     [field: SerializeField] public List<UnitType> Types { get; private set; }
 
-    private EnemyUpgrade _upgrade;
-
-
     public Action onTakeDamage;
-
-    private void Awake()
-    {
-        _upgrade = GetComponent<EnemyUpgrade>();
-    }
+    public Action onDie;
+    public Action<UnitType> onSpawn;
 
     public void Spawn(UnitType type)
     {
-        _upgrade.SetUpgrade(type);
-        Types.Add(type);
+        onSpawn?.Invoke(type);
     }
 
     public void Die()
     {
+        onDie?.Invoke();
         Destroy(gameObject);
     }
 

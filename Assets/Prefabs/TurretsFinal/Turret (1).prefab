@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtEnemy
   _rotationObject: {fileID: 2640784182939899851}
-  _targetTypeTrigger: 3
+  _targetTypeTrigger: 4
   searchRadius: 1000
   enemyLayer:
     serializedVersion: 2
