@@ -48,7 +48,7 @@ public class LookAtEnemy : MonoBehaviour
         {
             if (collider.TryGetComponent<Enemy>(out var enemy))
             {
-                if (enemy.Types.Contains(_targetTypeTrigger))
+                if (enemy.Types.Contains(_targetTypeTrigger) || enemy.Types.Contains(UnitType.Base))
                 {
                     Debug.Log($"<color=yellow>{enemy.name}</color>");
 

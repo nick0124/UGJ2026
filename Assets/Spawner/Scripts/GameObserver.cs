@@ -17,6 +17,7 @@ public class GameObserver : MonoBehaviour
         _manager.onDestroyTurret += _view.DestroyTurret;
         _manager.onSelectTurret += _view.SelectedTurretCard;
         _manager.onChangeTurret += _view.UpdateSpawnedTurretCount;
+        _manager.onChangePoint += _view.FillProgressSlider;
     }
 
     private void OnDisable()
@@ -26,5 +27,6 @@ public class GameObserver : MonoBehaviour
         _manager.onDestroyTurret -= _view.DestroyTurret;
         _manager.onSelectTurret -= _view.SelectedTurretCard;
         _manager.onChangeTurret -= _view.UpdateSpawnedTurretCount;
+        _manager.onChangePoint -= _view.FillProgressSlider;
     }
 }

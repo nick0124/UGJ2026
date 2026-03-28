@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameView : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameView : MonoBehaviour
     [SerializeField] private Transform _allCardsContainer;
     [SerializeField] private Transform _spawnedCardContainer;
     [SerializeField] private TMP_Text _spawnTurretCount;
+    [SerializeField] private Slider _progressSlider;
+    [SerializeField] private TMP_Text _progressText;
 
     private Dictionary<int, TurretCard> _spawnedTurretCards = new();
     private Dictionary<int, TurretCard> _turretCardObject = new();
@@ -54,5 +57,15 @@ public class GameView : MonoBehaviour
     public void UpdateSpawnedTurretCount(int currentSpawnedTurret, int maxSpawnedTurret)
     {
         _spawnTurretCount.text = string.Format($"{currentSpawnedTurret} / {maxSpawnedTurret}");
+    }
+
+    public void FillProgressSlider(int currentPoint, int maxPoint)
+    {
+        _progressSlider.maxValue = maxPoint;
+        _progressSlider.minValue = 0;
+
+        _progressSlider.value = currentPoint;
+
+        _progressText.text = string.Format($"{currentPoint} | {maxPoint}");
     }
 }

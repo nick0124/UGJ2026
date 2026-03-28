@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtEnemy
   _rotationObject: {fileID: 3245325484657985144}
-  _targetTypeTrigger: 3
+  _targetTypeTrigger: 2
   searchRadius: 1000
   enemyLayer:
     serializedVersion: 2
@@ -257,7 +257,7 @@ MonoBehaviour:
   firePoint: {fileID: 2263959687700820048}
   bulletSpeed: 20
   bulletScale: 1
-  bulletMaterial: {fileID: 0}
+  bulletMaterial: {fileID: 2100000, guid: 91df58e93475a5846b21ddc9bdb4720f, type: 2}
 --- !u!114 &2342158439566834566
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using Unity.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -80,6 +79,7 @@ public class EnemySpawner : MonoBehaviour
             int randomValue = Random.Range(0, _spawnPoints.Count);
             
             Enemy spawnEnemy = _spawner.CreateObject<Enemy>(_enemyPrefab, _spawnPoints[randomValue].position);
+            spawnEnemy.onDie += _gameManager.CheckEndGame;
             spawnEnemy.Spawn(type);
 
             yield return timeToSpawn;
