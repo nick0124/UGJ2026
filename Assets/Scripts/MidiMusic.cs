@@ -9,6 +9,7 @@ public class MidiMusic : MonoBehaviour
 {
     [SerializeField] private TextAsset midiFile;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float voume = 1f;
     
     private List<float> noteTimes = new List<float>();
     private int currentNoteIndex = 0;
@@ -34,7 +35,7 @@ public class MidiMusic : MonoBehaviour
             isSoundEnabled = value;
             if (audioSource != null)
             {
-                audioSource.volume = isSoundEnabled ? 1 : 0;
+                audioSource.volume = isSoundEnabled ? voume : 0;
             }
         }
     }
