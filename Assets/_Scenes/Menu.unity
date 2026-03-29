@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6c23579c714264ea0d8a6c131705ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadSceneBtn
-  sceneName: Level_2_Test
+  sceneName: Level2Test
 --- !u!65 &183833258
 BoxCollider:
   m_ObjectHideFlags: 0

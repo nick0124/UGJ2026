@@ -23,6 +23,9 @@ public class TurretMusic : MonoBehaviour
             midiMusic = musicController.GetMidiMusic(audioIndex);
             midiMusic.AddMidiNoteListener(OnMidiNote);
 
+            Debug.Log($"Музыка для турели {gameObject.name} установлена на {midiMusic.name}");
+            Debug.Log(audioIndex);
+
             foreach (var item in equalizerSize)
             {
                 item.SetAudioSource(midiMusic.GetAudioSource());
