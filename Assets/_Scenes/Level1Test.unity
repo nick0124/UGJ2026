@@ -5534,7 +5534,7 @@ MonoBehaviour:
     m_Bits: 64
   _maxTurretInPlace: 4
   _totalPointToWin: 100
-  _pointToKillEnemy: 1
+  _pointToKillEnemy: 2
   _turretPrefab:
   - {fileID: 4425154966728865040, guid: f351587606b66bc4cb17a18540820191, type: 3}
   - {fileID: 1117686431944021367, guid: 90c25da8c625c3742b47a6e2f435e8a6, type: 3}

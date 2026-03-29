@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   <Icon>k__BackingField: {fileID: 2800000, guid: c0340df91e427df4891e4bf937e4cb1f, type: 3}
   <ID>k__BackingField: 0
-  <Health>k__BackingField: 50
+  <Health>k__BackingField: 1
 --- !u!114 &2983344050998935643
 MonoBehaviour:
   m_ObjectHideFlags: 0
