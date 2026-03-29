@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54db67638fb89b340a2b89fad41d2117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidiMusic
-  midiFile: {fileID: 4900000, guid: 00282cf32cbaa0d4d83db5b3c086c1a6, type: 3}
+  midiFile: {fileID: 4900000, guid: a15fde2501729c54ab619ddbd5a1ec78, type: 3}
   audioSource: {fileID: 52941821}
   voume: 1
   OnMidiNote:
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54db67638fb89b340a2b89fad41d2117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidiMusic
-  midiFile: {fileID: 4900000, guid: ccf72ff843e5626459b4581136abf397, type: 3}
+  midiFile: {fileID: 4900000, guid: 18ce4541880347a44a4965070bffa254, type: 3}
   audioSource: {fileID: 470393795}
   voume: 1
   OnMidiNote:
@@ -4555,7 +4555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0420\u041E\u0413\u0420\u0415\u0421"
+  m_text: "\u041F\u0420\u041E\u0413\u0420\u0415\u0421\u0421"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4802,7 +4802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54db67638fb89b340a2b89fad41d2117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidiMusic
-  midiFile: {fileID: 4900000, guid: 133d5d38875a43c4f9094acba288d6a7, type: 3}
+  midiFile: {fileID: 4900000, guid: 28c02d3fba3323f4ab2b93838d33d6f9, type: 3}
   audioSource: {fileID: 1372031177}
   voume: 1
   OnMidiNote:
@@ -4941,7 +4941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54db67638fb89b340a2b89fad41d2117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidiMusic
-  midiFile: {fileID: 4900000, guid: d37acfb605429434f95c72842c8107b7, type: 3}
+  midiFile: {fileID: 4900000, guid: 6cd2a72dec1e1ac43bf863e9d24d0c3e, type: 3}
   audioSource: {fileID: 1411735363}
   voume: 1
   OnMidiNote:
@@ -5359,7 +5359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54db67638fb89b340a2b89fad41d2117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidiMusic
-  midiFile: {fileID: 4900000, guid: c0f899ae67564034fbb8ff6c2935502e, type: 3}
+  midiFile: {fileID: 4900000, guid: 30f20e2053bd5d6489ea7ffbf48c943f, type: 3}
   audioSource: {fileID: 1492003791}
   voume: 1
   OnMidiNote:
@@ -6928,7 +6928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54db67638fb89b340a2b89fad41d2117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidiMusic
-  midiFile: {fileID: 4900000, guid: dabbe4923ed73fd4d9f66127324618fe, type: 3}
+  midiFile: {fileID: 4900000, guid: 0dd4dfb1f194e0746bdf9a5e157d6051, type: 3}
   audioSource: {fileID: 1902484636}
   voume: 1
   OnMidiNote:
@@ -7067,7 +7067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54db67638fb89b340a2b89fad41d2117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidiMusic
-  midiFile: {fileID: 4900000, guid: ccf72ff843e5626459b4581136abf397, type: 3}
+  midiFile: {fileID: 4900000, guid: 18ce4541880347a44a4965070bffa254, type: 3}
   audioSource: {fileID: 2005388786}
   voume: 1
   OnMidiNote:
