@@ -47,6 +47,8 @@ public class WinMenu : MonoBehaviour
     {
         if (_isLoadScene == true) return;
 
+        GameProgress.level2Opened = true;
+
         _isLoadScene = true;
         CloseMenu();
         SceneManager.LoadScene(sceneIndex);
