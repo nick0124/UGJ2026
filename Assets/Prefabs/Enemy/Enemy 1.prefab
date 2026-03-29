@@ -77,7 +77,7 @@ MonoBehaviour:
   turretMask:
     serializedVersion: 2
     m_Bits: 128
-  moveSpeed: 2.74
+  moveSpeed: 3.6
   rotationSpeed: 360
   stoppingDistance: 2.5
   moveOnStart: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629425baa64f93d4bab73c6ff6b2b9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  _health: 20
+  _health: 40
   <Types>k__BackingField: 
 --- !u!114 &4454348220998979064
 MonoBehaviour:
