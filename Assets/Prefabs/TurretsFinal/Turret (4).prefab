@@ -368,8 +368,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6724813555123848119, guid: 4a9dbb12a6d883f4e9b8bf132e83d1a1, type: 3}
   firePoint: {fileID: 4376359491034844766}
   bulletSpeed: 20
-  bulletScale: 1
-  bulletMaterial: {fileID: 0}
+  bulletScale: 2
+  bulletMaterial: {fileID: 2100000, guid: c0e8320912bcb3e4eb13e8ad749bd91c, type: 2}
 --- !u!114 &3305703751251902038
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -133,7 +133,7 @@ MonoBehaviour:
   firePoint: {fileID: 1437159045337583404}
   bulletSpeed: 20
   bulletScale: 1
-  bulletMaterial: {fileID: 0}
+  bulletMaterial: {fileID: 2100000, guid: 9e9fd9f64223f2a4aa5698b40a8785f6, type: 2}
 --- !u!114 &5123890863021031638
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1237,7 +1237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -81.4, y: -43.920166}
+  m_AnchoredPosition: {x: -81.3999, y: -43.920166}
   m_SizeDelta: {x: 452.6228, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217126191
@@ -1617,7 +1617,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0.15506648, y: -0.8338413, z: 0.29290718, w: -0.44143915}
-  m_LocalPosition: {x: -22.8, y: 23.2, z: 14.13}
+  m_LocalPosition: {x: -24, y: 23.26, z: 16.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3721,7 +3721,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.3, y: 0, z: 12.2}
-  m_LocalScale: {x: 37.148, y: 37.148, z: 37.148}
+  m_LocalScale: {x: 307.148, y: 307.148, z: 307.148}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -4280,7 +4280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -79.9, y: -109.8}
+  m_AnchoredPosition: {x: -79.8999, y: -109.80005}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218907205
@@ -5534,7 +5534,7 @@ MonoBehaviour:
     m_Bits: 64
   _maxTurretInPlace: 4
   _totalPointToWin: 100
-  _pointToKillEnemy: 2
+  _pointToKillEnemy: 1
   _turretPrefab:
   - {fileID: 4425154966728865040, guid: f351587606b66bc4cb17a18540820191, type: 3}
   - {fileID: 1117686431944021367, guid: 90c25da8c625c3742b47a6e2f435e8a6, type: 3}
