@@ -11,8 +11,8 @@ public class Turret : MonoBehaviour, IDamageble
 
     public void Die()
     {
-        onDie?.Invoke(ID, true);
         Debug.Log($"{gameObject.name} turret is destroyed.");
+        onDie?.Invoke(ID, true);
     }
 
     public void TakeDamage(float damage)

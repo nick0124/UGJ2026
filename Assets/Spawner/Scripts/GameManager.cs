@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
 
         InitializedAllTurretCard();
         CreateStartTurret();
+
+        onChangePoint?.Invoke(_currentPoint, _totalPointToWin);
     }
 
     public void SelectedTurret(int turretID, bool a)
